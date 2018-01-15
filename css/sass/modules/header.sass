@@ -1,9 +1,10 @@
+/* ------------------------------------ */
+/*  HEADER  */
 .header
 	+position(fixed, 0, 0, auto, 0)
 	+transition(all, .4s)
 	
-	height: 110px
-	color: #FFF
+	box-shadow: 0px 0px 36.8px 3.2px rgba(0, 0, 0, 0.11)
 	
 	.container-fluid
 		height: 100% 
@@ -11,6 +12,8 @@
 		.row
 			height: 100%
 			
+/* ------------------------------------ */
+/*  HEADER ONSCROLL   */
 .headroom--unpinned
     transform: translateY(-100%)
 .headroom--pinned,
@@ -18,23 +21,32 @@
 	transform: translateY(0)
 
 /* ------------------------------------ */
-/*  NAV STYLES  */
+/*  LOGO  */
+.logo 
+	display: block
+	width: 210px 
+	img
+		display: block
+		max-width: 100% 
+
+/* ------------------------------------ */
+/*  NAVIGATION  */
 
 .page-menu
-	ul
+	& > ul
 		list-style-type: none
-
-		li
+		& > li
 			display: inline-block
 			vertical-align: middle
 			margin: 0 10px
+			& > a
+				color: #000
+				font-weight: 300  
+				line-height: 90px 
 
-			a
-				color: #fff
-				text-transform: uppercase
 
 /* ------------------------------------ */
-/*  MENU BUTTON  */
+/*  HUMBURGER MENU BUTTON  */
 
 .menu-button
 	display: none
