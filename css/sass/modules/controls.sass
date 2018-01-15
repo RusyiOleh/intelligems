@@ -2,6 +2,36 @@
     height: 50px
     left: 50px
     display: inline-block  
+    
+.arrow-link
+    width: 75px
+    height: 75px
+    background-color: $accent-primary
+    border: none
+    position: relative
+    &:after
+        content: ""
+        display: block
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        margin: auto  
+        width: 18px
+        height: 12px  
+        background-position: 50% 50%
+        background-image: url("../images/arrow-link-down-w.svg")  
+        background-size: 100%  
+        transform: rotate(90deg)
+        
+    &--secondary
+        background-color: $accent-secondary 
+        &:after
+            background-image: url("../images/arrow-link-down.svg")  
+            transform: rotate(0deg)
+
+
 /* ------------------------------------ */
 /*  SLICK ARROWS  */
 .slick-arrow,

@@ -3,6 +3,8 @@
 .header
 	+position(fixed, 0, 0, auto, 0)
 	+transition(all, .4s)
+	background-color: #FFF 
+	z-index: 100 
 	
 	box-shadow: 0px 0px 36.8px 3.2px rgba(0, 0, 0, 0.11)
 	
@@ -42,10 +44,90 @@
 			display: inline-block
 			vertical-align: middle
 			margin: 0 10px
+			text-align: center
+			&:last-child
+				margin-right: 0 
 			& > a
-				color: #000
+				display: block
+				padding: 0 25px 
+				color: $text
 				font-weight: 300  
 				line-height: 90px 
+				position: relative
+				overflow: hidden
+				transition: all .2s 
+				&:after
+					content: ''
+					display: block
+					width: 75px
+					height: 3px 
+					position: absolute
+					bottom: 0
+					left: 0
+					right: 0
+					margin: auto   
+					background-color: $accent-primary
+					opacity: 1
+					transform: translateY(3px)  
+					transition: all .2s
+			&.menu-item-has-children
+				& > a
+					&:before
+						content: ""
+						display: block
+						width: 8px
+						height: 8px
+						position: absolute
+						right: 5px
+						top: 0
+						bottom: 0
+						margin: auto
+						background-image: url("../images/arrow-down.svg")
+						background-size: 100% 100%     
+						transform: rotate(90deg)
+						opacity: 1 
+				&:hover
+					& > a:before
+						opacity: 0 
+
+			&:hover
+				a
+					background-color: $accent-primary
+					color: #FFF 
+				ul
+					opacity: 1
+					transform: translateY(0)  
+					visibility: visible 
+			&.current-menu-item
+				a
+					font-weight: 800 
+					&:after
+						opacity: 1
+						transform: translateY(0)  
+			
+			// sub menu
+			ul
+				position: absolute
+				top: 100%
+				padding: 30px 
+				background-color: $accent-primary
+				list-style-type: none
+				text-align: left
+				transition: all .2s 
+				transform: translateY(20px)   
+				opacity: 0
+				visibility: hidden 
+				li
+					display: block
+					margin-bottom: 25px 
+					a
+						color: #fff
+						font-size: 16px 
+						transition: all .2s
+						&:hover
+							opacity: .6 
+					&:last-child
+						margin-bottom: 0 
 
 
 /* ------------------------------------ */

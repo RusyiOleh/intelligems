@@ -27,12 +27,23 @@
                         <a href="index.html" class="logo"><img src="images/logo.svg" alt=""></a>
                     </div>
 
-                    <div class="col-auto text-center">
+                    <div class="col-auto text-right">
                         <nav class="page-menu"><!-- start navigation -->
                             <ul>
-                                <li><a href="index.html" class="active">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="blog.html">News</a></li>
+                                <li class="current-menu-item"><a href="index.html" class="active">Home</a></li>
+                                <li class="menu-item-has-children">
+                                    <a href="about.html">About</a>
+                                    <ul>
+                                        <li><a href="how-we-work.html">How we work</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="404-message.html">404 with message</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="solutions.html">Solutions</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="portfolio.html">Work</a></li>
+                                <li><a href="whitepaper.html">Resources</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
                             </ul>
                         </nav><!-- end nav -->
@@ -53,10 +64,27 @@
                                                     <!-- OFFER SECTION -->
         <section class="offer">
             <div class="container"><!-- start offerInfo -->
-                <h1>Hello, I'm Dreamkiller.<br> Let's get started!</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni perspiciatis asperiores eaque sapiente ut dolorem molestiae necessitatibus ullam laudantium veritatis enim fuga dignissimos maiores temporibus deleniti sint, in doloribus harum!</p>
+                <div class="row align-items-center">
+                    <div class="text-block">
+                        <strong>About us</strong>
+                        <h1>We <span>passionately</span> create world class products</h1>
+                        <p>In Intelligems, we are a group of passionate, highly-proficient web product developers, able to tackle projects regardless of size and scale. </p>
+                    </div>
+                    <div class="offer__img">
+                        <img src="images/offer-main.jpg" alt="">
+                        <img src="images/dots.png" alt="" class="offer__img__dots">
+                        <button class="arrow-link"></button>
+                        <button class="arrow-link arrow-link--secondary"></button>
+                    </div>
+                </div>
             </div><!-- end wrapper -->
         </section><!-- end offer section --> 
+
+        <section class="section">
+            <div class="container">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores corporis alias, eveniet eum ipsum expedita recusandae cum a dolorem, unde ratione aperiam? Nobis adipisci et tempore quia, tempora quibusdam accusantium.</p>
+            </div>
+        </section>
 
 
   	    <!-- //////////////////////////////////////////////////////////////////////// -->
