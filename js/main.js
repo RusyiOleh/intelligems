@@ -102,6 +102,17 @@ jQuery(document).ready(function($) {
     });
 
 
+
+    /*---------------------------
+                                  Blog slider
+    ---------------------------*/
+    $('.blog-slider').slick({
+        arrows: true,
+        dots: true,
+        slidesToShow: 4,
+        slidesToScroll: 1
+    });
+
     /**
      *
      * Open popup

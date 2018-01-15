@@ -13,6 +13,8 @@
     position: relative
     cursor: pointer
     transition: all .2s 
+    display: inline-block
+    
     &:after
         content: ""
         display: block
@@ -41,9 +43,22 @@
         
     &--secondary
         background-color: $accent-secondary 
+        position: relative
+        
         &:after
             background-image: url("../images/arrow-link-down.svg")  
             transform: rotate(0deg)
+            
+        span
+            font-weight: 700
+            white-space: nowrap
+            position: absolute
+            right: 75%
+            top: 50%
+            transform: translateY(-50%)
+            color: #000
+            transition: all 0.3s ease
+            font-size: 18px 
 
 /* ------------------------------------ */
 /*  SOCIAL LINKS  */
