@@ -1,0 +1,55 @@
+.white-box
+	padding: 65px 70px
+	box-shadow: 0px 0px 36.1px 1.9px rgba(0, 0, 0, 0.17)
+	position: relative
+	background-color: #fff 
+	
+	&:before	
+		background-color: #fff 
+	
+
+
+.corner
+	&-top-left,
+	&-top-right,
+	&-bottom-left,
+	&-bottom-right
+		position: relative
+		z-index: 1 
+		
+		&:after
+			content: ''
+			width: 75px
+			height: 75px
+			position: absolute
+			background-color: #3167B4
+			z-index: -1 
+			
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 0 
+			
+	&-top-left
+		&:after
+			left: -6px
+			top: -6px
+			
+	&-top-right
+		&:after
+			right: -6px
+			top: -6px
+			
+	&-bottom-right
+		&:after
+			right: -6px
+			bottom: -6px
+			
+	&-bottom-left
+		&:after
+			left: -6px
+			bottom: -6px
