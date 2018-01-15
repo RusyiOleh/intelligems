@@ -1,7 +1,10 @@
 .section
     padding: 100px 0 
+    &--bg
+        background-color: $accent-tertiary 
     &-heading   
         margin-bottom: 80px 
+        position: relative
         &--right
             text-align: right
         strong
@@ -9,8 +12,16 @@
             margin-bottom: 0
         h2
             font-size: 46px 
-
-
+        p
+            max-width: 570px 
+        &__dots
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translateX(-40%) 
+    .text-center
+        p
+            margin: 0 auto 
 
 
 .subscribe

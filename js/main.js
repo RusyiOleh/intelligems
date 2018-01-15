@@ -96,6 +96,11 @@ jQuery(document).ready(function($) {
         
     });
 
+    $('.work-slider').slick({
+        arrows: true,
+        dots: true
+    });
+
 
     /**
      *
