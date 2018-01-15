@@ -3,12 +3,15 @@
     left: 50px
     display: inline-block  
     
+/* ------------------------------------ */
+/*  BUTTONS WITH ARROS  */
 .arrow-link
     width: 75px
     height: 75px
     background-color: $accent-primary
     border: none
     position: relative
+    cursor: pointer
     &:after
         content: ""
         display: block
@@ -31,6 +34,27 @@
             background-image: url("../images/arrow-link-down.svg")  
             transform: rotate(0deg)
 
+/* ------------------------------------ */
+/*  SOCIAL LINKS  */
+.socials
+    a
+        display: block
+        width: 22px
+        height: 20px  
+        text-align: center
+        margin: 30px 0 0 
+        img
+            display: block
+            max-width: 100%
+            max-height: 100%  
+            &:last-child
+                display: none
+        &:hover
+            img
+                &:first-child
+                    display: none  
+                &:last-child
+                    display: block  
 
 /* ------------------------------------ */
 /*  SLICK ARROWS  */
