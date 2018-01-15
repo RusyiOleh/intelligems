@@ -59,51 +59,29 @@
 
 /* ------------------------------------ */
 /*  SLICK ARROWS  */
-.slick-arrow,
-.slick-arrow:focus,
-.slick-arrow:active,
-.slick-arrow:hover
-	+transition(all, .2s)
-	width: 70px
-	height: 90px
-	z-index: 10
-	background-color:  peru
-	-webkit-border-radius: 2px
-	border-radius: 2px
-	background-repeat: no-repeat
-	background-position: 50% 50%
-	-webkit-background-size: 23px 20px
-	-o-background-size: 23px 20px
-	background-size: 23px 20px
-
-	@media (max-width: 800px)
-		width: 50px
-		height: 70px
-
-	@media (max-width: 600px)
-		width: 30px
-		height: 50px
-		-webkit-background-size: 16px 16px
-		-o-background-size: 16px 16px
-		background-size: 16px 16px
-
-	&:before
-		display: none
-
-.slick-arrow:hover
-	opacity: .8
+.slick-arrow
+    display: block
+    width: 75px
+    height: 75px
+    background: $accent-primary 
+    z-index: 10 
+    opacity: 1 
+    &:before
+        display: none
+        
+.slick-arrow
+    &:hover
+        opacity: .8 
 
 .slick-next,
 .slick-next:hover,
 .slick-next:focus
-	right: 0
-	background-image: url("../images/right-arrow.svg")
+	background: $accent-primary url("../images/right-arrow.svg")
 
 .slick-prev,
 .slick-prev:hover,
 .slick-prev:focus
-	left: 0
-	background-image: url("../images/left-arrow.svg")
+	background: $accent-primary url("../images/left-arrow.svg")
 
 
 .input.file
