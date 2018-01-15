@@ -92,13 +92,13 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   Fancybox
     ---------------------------*/
-    $('.fancybox').fancybox({
-        
-    });
+    $('.fancybox').fancybox({});
 
     $('.work-slider').slick({
         arrows: true,
-        dots: true
+        dots: true,
+        fade: true,
+         adaptiveHeight: true
     });
 
 

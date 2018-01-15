@@ -1,8 +1,15 @@
 .btn
-    height: 50px
-    left: 50px
+    height: 40px
+    line-height: 40px
+    border: none 
     display: inline-block  
-    
+    min-width: 155px
+    padding: 0 15px 
+    background: #e3e3e3
+    cursor: pointer
+    &-primary
+        background-color: $accent-primary 
+        color: #FFF 
 /* ------------------------------------ */
 /*  BUTTONS WITH ARROS  */
 .arrow-link
@@ -86,6 +93,7 @@
 
 /* ------------------------------------ */
 /*  SLICK ARROWS  */
+
 .slick-arrow
     display: block
     width: 75px
@@ -93,6 +101,9 @@
     background: $accent-primary 
     z-index: 10 
     opacity: 1 
+    top: auto
+    bottom: 0
+    box-shadow: 0px 9px 34.96px 3.04px rgba(0, 0, 0, 0.25)
     &:before
         display: none
         
@@ -110,53 +121,30 @@
 .slick-prev:focus
 	background: $accent-primary url("../images/left-arrow.svg")
 
-
-.input.file
-    position: relative
-    padding: 0!important
-
-    &:after
-        content: '';
-        width: 38px;
-        height: 38px;
-        border-radius: 6px
-        background-color: #fdbf2d
-        background-size: 20px;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-image: url(../images/upload.svg);
-        position: absolute;
-        top: 50%;
-        right: 21px;
-        -webkit-transform: translate(50%, -50%);
-        -ms-transform: translate(50%, -50%);
-        -o-transform: translate(50%, -50%);
-        transform: translate(50%, -50%);
-        pointer-events: none;
-
-    input[type="file"] 
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0
-        bottom: 0
-        z-index: 2;
-        opacity: 0;
-        cursor: pointer;
-
-        &::-webkit-file-upload-button
-            cursor: pointer;
+.slick-next
+    right: 0px
+    left: auto
+.slick-prev
+    right: 90px
+    left: auto
+    
+/* ------------------------------------ */
+/*  SLICK DOTS  */
+.slick-dots
+    bottom: -50px
+    li
+        width: 8px
+        height: 8px
+        display: inline-block
+        vertical-align: middle 
+        border-radius: 0  
+        background-color: $text-secondary
+        &.slick-active
+            background-color: $accent-primary
+        button
+            display: none
 
 
-    span
-        +textEnd();
-        display: block
-        height: 100%
-        padding: 0 55px 0 15px
-        text-align: left
-        
 
 
 form
