@@ -29,6 +29,16 @@
         background-size: 100%  
         transform: rotate(90deg)
         
+    &--right
+        &:after
+            transform: rotate(0)
+            
+    &--white
+        background-color: #FFF 
+        
+        &:after
+            background-image: url("../images/arrow-link-down.svg") 
+        
     &--secondary
         background-color: $accent-secondary 
         &:after
@@ -37,7 +47,8 @@
 
 /* ------------------------------------ */
 /*  SOCIAL LINKS  */
-.socials
+.socials,
+.socials-horizontal
     a
         display: block
         width: 22px
@@ -56,6 +67,22 @@
                     display: none  
                 &:last-child
                     display: block  
+
+.socials-horizontal
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    
+    a
+        margin-top: 0
+        
+        img
+            display: block
+            margin: 0 auto 
+        
+        & + a
+            margin-left: 25px
+
 
 /* ------------------------------------ */
 /*  SLICK ARROWS  */
@@ -129,3 +156,51 @@
         height: 100%
         padding: 0 55px 0 15px
         text-align: left
+        
+
+
+form
+    position: relative
+    
+.form-group
+    margin-bottom: 20px
+    
+    &.mb-0
+        margin-bottom: 0 
+        
+    .label
+        font-size: 21px
+        font-weight: 700
+        display: block  
+        margin-bottom: 8px 
+        
+.form-control
+    display: block
+    width: 100%
+    border: 0
+    height: 50px
+    background-color: #F7F7F7 
+    padding: 0 25px
+    
+    &.bordered
+        background-color: transparent
+        border: 0
+        border-bottom: 1px solid #ECECEC 
+        padding: 0
+        
+        &.white
+            color: #fff
+            border-color: #fff
+    
+textarea.form-control
+    height: 225px
+    resize: none
+    padding-top: 15px 
+    
+.form-button
+    display: block
+    
+    &.positioned
+        position: absolute
+        bottom: 0
+        right: 0

@@ -1,22 +1,83 @@
 .text-block
-    max-width: 580px 
-    position: relative
-    z-index: 2 
-    h1
-        font-size: 50px 
-        margin-bottom: 20px 
-        line-height: 1.2 
-    h1,h2,h3
-        line-height: 1.2 
-        span
-            color: $accent-primary
-    strong
-        @extend .tag-text
-    p
-        line-height: 2 
-        max-width: 90%
-        @media (max-width: 767px)
-            max-width: 100%  
+	max-width: 580px 
+	position: relative
+	z-index: 2 
+	h1
+		font-size: 50px 
+		margin-bottom: 20px 
+		line-height: 1.2 
+	h1,h2,h3
+		line-height: 1.2 
+		span
+			color: $accent-primary
+	strong
+		text-transform: uppercase
+		color: $text-secondary
+		font-weight: 800
+		display: block  
+		margin-bottom: 20px 
+	p
+		line-height: 2 
+		max-width: 90%
+		@media (max-width: 767px)
+			max-width: 100%  
 
-        
+		
 
+.block-title
+	margin-bottom: 50px 
+
+	.pre-title
+		text-transform: uppercase
+		color: $text-secondary
+		font-weight: 800
+		display: block  
+		margin-bottom: 10px 
+		
+	h1,
+	h2,
+	h3
+		line-height: 1.2 
+		
+		span
+			color: $accent-primary
+			
+	h2
+		font-size: 40px
+		font-weight: 900  
+		
+
+.iconed-list
+	display: block
+	
+	li
+		display: flex
+		align-items: center
+		
+		&:not(:last-child)
+			margin-bottom: 20px 
+		
+		.icon
+			width: 18px
+			height: 18px
+			
+			img
+				display: block
+				max-width: 100%
+				max-height: 100% 
+				margin: 0 auto 
+				
+		.content
+			padding-left: 20px 
+			
+
+	a
+		color: inherit
+		border-bottom: 1px solid transparent
+		transition: all 0.3s ease
+		
+		&:hover
+			border-color: #000
+			
+	address
+		font-style: normal
