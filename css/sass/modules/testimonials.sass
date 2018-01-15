@@ -1,0 +1,58 @@
+.testimonials
+    & > div
+        position: relative
+        &:after
+            content: ""
+            display: block
+            height: 115px
+            width: 1px
+            position: absolute
+            top: 0
+            right: 0
+            background-color: #E1E1E1
+        &:last-child
+            &:after
+                display: none
+                
+.testimonial
+    width: 360px
+    max-width: 100%
+    padding: 0 20px   
+    text-align: center
+    margin: 0 auto 
+    &__img
+        margin: 0 auto 90px
+        display: block 
+        width: 135px
+        transition: all .2s 
+        img
+            display: block
+            max-width: 100% 
+        &:hover
+            transform: scale(1.2) 
+            box-shadow: 0px 0px 34.96px 3.04px rgba(0, 0, 0, 0.14)
+    h4
+        font-size: 24px 
+        margin-bottom: 20px 
+    p
+        position: relative
+        &:before
+            content: '“' 
+            display: block
+            font-size: 34px
+            position: absolute
+            left: -10px
+            top: -10px
+            line-height: 1
+        &:after
+            content: '”' 
+            display: block
+            font-size: 34px
+            position: absolute
+            right: -10px
+            bottom: -10px
+            line-height: 1
+    
+    .socials
+        margin-top: 30px 
+        

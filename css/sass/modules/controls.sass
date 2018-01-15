@@ -10,8 +10,10 @@
     &-primary
         background-color: $accent-primary 
         color: #FFF 
+        
+
 /* ------------------------------------ */
-/*  BUTTONS WITH ARROS  */
+/*  BUTTONS WITH ARROWS  */
 .arrow-link
     width: 75px
     height: 75px
@@ -69,8 +71,7 @@
 
 /* ------------------------------------ */
 /*  SOCIAL LINKS  */
-.socials,
-.socials-horizontal
+.socials
     a
         display: block
         width: 22px
@@ -89,21 +90,11 @@
                     display: none  
                 &:last-child
                     display: block  
-
-.socials-horizontal
-    display: flex
-    align-items: center
-    justify-content: flex-start
-    
-    a
-        margin-top: 0
-        
-        img
-            display: block
-            margin: 0 auto 
-        
-        & + a
-            margin-left: 25px
+    &--horizontal
+        a
+            display: inline-block
+            vertical-align: middle
+            margin: 0 5px 
 
 
 /* ------------------------------------ */
@@ -121,6 +112,20 @@
     box-shadow: 0px 9px 34.96px 3.04px rgba(0, 0, 0, 0.25)
     &:before
         display: none
+    &:after
+        content: ""
+        display: block
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        margin: auto  
+        width: 18px
+        height: 12px  
+        background-position: 50% 50%
+        background-image: url("../images/arrow-link-down-w.svg")  
+        background-size: 100%  
         
 .slick-arrow
     &:hover
@@ -139,9 +144,13 @@
 .slick-next
     right: 0px
     left: auto
+    &:after
+        transform: rotate(0deg)
 .slick-prev
     right: 90px
     left: auto
+    &:after
+        transform: rotate(180deg)
     
 /* ------------------------------------ */
 /*  SLICK DOTS  */
