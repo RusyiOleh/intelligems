@@ -1,0 +1,49 @@
+.services
+    position: relative
+    &__img
+        position: absolute
+        left: 0
+        bottom: 0
+.service-card
+    background-color: $accent-tertiary
+    text-align: center
+    display: flex
+    align-items: center
+    justify-content: center 
+    flex-direction: column 
+    min-height: 330px
+    width: 20%   
+    transition: all .2s
+    padding: 90px 15px
+    position: relative
+    h3
+        font-size: 17px 
+        margin-bottom: 10px 
+    p
+        font-size: 16px 
+        line-height: 1.8 
+    &__img
+        display: block
+        margin: 0 auto 25px
+        max-height: 45px
+        max-width: 50px   
+        &:nth-of-type(2)
+            display: none
+    button
+        position: absolute
+        right: 0
+        bottom: 0
+        background-color: transparent 
+    &:hover
+        background-color: #FFF
+        transform: scale(1.2)  
+        box-shadow: 0px 0px 34.96px 3.04px rgba(0, 0, 0, 0.18)
+        z-index: 2
+        .service-card__img
+            &:nth-of-type(2)
+                display: block
+            &:nth-of-type(1)
+                display: none
+        .arrow-link--secondary
+            background-color: $accent-secondary 
+        

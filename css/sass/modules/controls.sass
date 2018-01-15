@@ -12,6 +12,7 @@
     border: none
     position: relative
     cursor: pointer
+    transition: all .2s 
     &:after
         content: ""
         display: block
@@ -31,6 +32,12 @@
     &--right
         &:after
             transform: rotate(0)
+            
+    &--white
+        background-color: #FFF 
+        
+        &:after
+            background-image: url("../images/arrow-link-down.svg") 
         
     &--secondary
         background-color: $accent-secondary 
@@ -202,6 +209,10 @@ form
         border: 0
         border-bottom: 1px solid #ECECEC 
         padding: 0
+        
+        &.white
+            color: #fff
+            border-color: #fff
     
 textarea.form-control
     height: 225px
@@ -209,6 +220,8 @@ textarea.form-control
     padding-top: 15px 
     
 .form-button
+    display: block
+    
     &.positioned
         position: absolute
         bottom: 0
