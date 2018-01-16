@@ -233,3 +233,224 @@
                 
                 &:hover
                     color: #000
+                    
+
+
+
+.blog-article
+    &__cover
+        height: 420px
+        background-position: 50% 50%
+        background-repeat: no-repeat 
+        background-size: cover  
+        
+    &__article
+        padding: 80px 0 50px
+        
+
+
+
+.article
+    padding-left: 235px
+    position: relative
+    
+    &-heading
+        margin-bottom: 40px
+         
+        .pre-title
+            text-transform: uppercase
+            color: #8791A1
+            font-weight: 800
+            display: block
+            margin-bottom: 22px
+            
+        h1
+            padding: 35px 0
+            font-size: 50px 
+            border-top: 1px solid #F4F4F4
+            border-bottom: 1px solid #F4F4F4
+            
+    &-inner
+        padding-right: 235px 
+        
+    p,
+    ul,
+    ol
+        &:not(:last-child)
+            margin-bottom: 1em 
+            
+    img
+        display: block
+        max-width: 100% 
+        margin: 3em 0
+        
+
+    blockquote
+        margin: 0
+        text-align: center
+        font-weight: 800
+        font-size: 30px
+        line-height: 1.5em
+        
+        p
+            line-height: inherit
+            
+    .blockquote
+        display: flex
+        align-items: center
+        margin: 3em -235px
+        
+        .white-box
+            max-width: 660px 
+            
+
+    .proposed-articles
+        margin: 3em 0
+        width: 1000px
+        
+
+
+    &-author
+        position: absolute
+        left: 0
+        width: 215px
+        top: 125px
+        
+        &__image
+            display: inline-block
+            text-align: center
+            margin-bottom: 35px 
+            
+            img
+                display: block
+                margin: 0 0 20px 0
+                
+            .name
+                display: block
+                font-weight: 800
+                font-size: 21px 
+                margin-bottom: 0!important 
+        
+
+
+
+.proposed-articles
+
+    .pa-article
+        display: flex
+        align-items: flex-start
+        
+        &__image
+            width: 210px
+            border-left: 10px solid $accent-primary
+            
+            img
+                display: block
+                width: 100% 
+                margin: 0
+                
+        &__content
+            width: calc(100% - 210px)
+            padding-left: 15px 
+            
+            h3
+                font-size: 21px 
+                margin-bottom: 25px 
+                
+            .more
+                display: inline-flex
+                align-items: center
+                font-size: 18px
+                font-weight: 800
+                color: #000  
+                
+                img
+                    width: 16px
+                    margin: 0
+                    margin-left: 10px 
+                    
+
+
+.post-footer
+    padding: 50px 0
+    
+    .inner
+        width: 975px
+        margin: 0 auto
+    
+    .share-options
+        margin-bottom: 50px 
+        
+        span
+            display: inline-block
+            vertical-align: middle 
+            margin-right: 60px 
+            
+        .socials
+            display: inline-block
+            vertical-align: middle
+            
+
+    .post-comments
+        margin-bottom: 120px
+         
+        img
+            max-width: 100% 
+            
+
+
+.post-navigation
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    
+    .post-link
+        display: block
+        padding: 20px 35px
+        color: #000
+        background-color: #F7F7F7 
+        width: 400px
+        transition: all 0.3s ease
+        
+        h3
+            font-size: 21px 
+            margin-bottom: 23px
+            
+        span
+            font-weight: 800
+            position: relative
+            
+            &:after
+                content: ''
+                width: 16px
+                height: 16px
+                background-image: url(../images/arrow-link-down-b.svg) 
+                background-size: 100% 
+                background-repeat: no-repeat 
+                background-position: 50% 50% 
+                position: absolute
+                top: 50%
+                left: 100%
+                transform: translateY(-50%)
+                margin-left: 10px 
+                
+
+        &.prev-post
+            text-align: right
+            
+            span
+                &:after
+                    left: auto
+                    right: 100%
+                    margin-left: auto 
+                    margin-right: 10px
+                    transform: translateY(-50%) rotate(180deg) 
+                    
+
+        &:hover
+            background-color: $accent-primary
+            color: #fff
+            
+            span
+                &:after
+                    background-image: url(../images/arrow-link-down-w.svg) 
