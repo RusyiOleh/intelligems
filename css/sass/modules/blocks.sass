@@ -53,3 +53,45 @@
 		&:after
 			left: -6px
 			bottom: -6px
+			
+	&-green
+		&:after
+			background-color: $accent-secondary 
+			
+
+
+
+.image-content-block
+	display: flex
+	justify-content: flex-end
+	position: relative
+	
+	&:not(:last-child)
+		margin-bottom: 90px 
+	
+	.white-box
+		width: 60%
+		
+		.text-block
+			max-width: 100% 
+			
+			p
+				max-width: 100% 
+			
+			.block-title
+				margin-bottom: 30px 
+		
+	img
+		position: absolute
+		top: -25px
+		left: 0
+		width: -webkit-calc(40% + 30px)
+		width: calc(40% + 30px)
+		
+
+	&--reverse
+		justify-content: flex-start
+		
+		img
+			left: auto
+			right: 0

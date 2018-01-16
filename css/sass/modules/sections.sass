@@ -5,7 +5,7 @@
         padding-bottom: 140px  
 .section
     padding: 100px 0 
-    overflow: hidden
+    //overflow: hidden
 
     &-heading   
         margin-bottom: 80px 
@@ -51,6 +51,12 @@
             margin: auto
             transform: translateY(-50%)
             background-color: #E1E1E1     
+            
+    &.pb-0
+        padding-bottom: 0
+        
+    &.pt-0
+        padding-top: 0 
 
 .subscribe
     padding: 65px 0 85px
@@ -79,3 +85,19 @@
             .input-box
                 width: calc(100% - 75px)
                 padding-right: 31px 
+                
+
+
+.dots
+    background-image: url(../images/dots.png)
+    background-repeat: no-repeat 
+    background-size: 500px
+
+    &-center-center
+        background-position: 50% 50%
+        
+    &-center-top
+        background-position: 50% 0%
+        
+    &-center-bottom
+        background-position: 50% 100% 
