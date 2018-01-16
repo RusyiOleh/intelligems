@@ -70,10 +70,13 @@
 		margin-bottom: 90px 
 	
 	.white-box
-		width: 60%
+		width: 780px
 		
+		@media (max-width: 1499px)
+			width: 55%
+			
 		.text-block
-			max-width: 100% 
+			max-width: 480px
 			
 			p
 				max-width: 100% 
@@ -85,8 +88,12 @@
 		position: absolute
 		top: -25px
 		left: 0
-		width: -webkit-calc(40% + 30px)
-		width: calc(40% + 30px)
+		width: -webkit-calc(100% - 750px)
+		width: calc(100% - 750px)
+		
+		@media (max-width: 1499px)
+			width: -webkit-calc(55% + 30px)
+			width: calc(55% + 30px)
 		
 
 	&--reverse
