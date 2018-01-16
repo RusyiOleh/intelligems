@@ -53,15 +53,18 @@
             background-color: #E1E1E1     
             
     &.pb-0
-        padding-bottom: 0
+        padding-bottom: 0!important
         
     &.pt-0
-        padding-top: 0 
+        padding-top: 0!important
 
 .subscribe
     padding: 65px 0 85px
     text-align: center
     background: $accent-primary url(../images/dots.png) no-repeat center center
+    
+    &--ebook
+        background: $accent-primary
     
     h3
         font-size: 33px
@@ -70,21 +73,23 @@
         margin-bottom: 22px 
         
     &-form
-        max-width: 480px
         width: 100%
         margin: 0 auto 
         
         .sf-row
             display: flex
             align-items: flex-end
-            
+            justify-content: center
 
             .button-box
                 width: 75px
                 
             .input-box
-                width: calc(100% - 75px)
-                padding-right: 31px 
+                width: 370px
+                
+            .button-box,
+            .input-box
+                margin: 0 10px
                 
 
 
