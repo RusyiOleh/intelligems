@@ -17,6 +17,9 @@
         background-position: 50% 50% 
         box-shadow: none
         
+        &:after
+            display: none
+        
         &.slick-prev
             left: auto
             right: 100%
@@ -99,3 +102,134 @@
             
             &:after
                 background-image: url(../images/arrow-link-down.svg)
+                
+
+
+.blog-list
+    &__filters
+        display: flex
+        align-items: center
+        padding-bottom: 25px
+        margin-bottom: 50px 
+        border-bottom: 1px solid #DADADA 
+        
+        label
+            font-weight: 800 
+            padding-right: 15px
+            font-size: 21px 
+
+        .filters
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            flex: 1 1 auto
+            
+        .filter-option
+            background-color: transparent
+            border: 0
+            padding: 0 50px 0 0
+            position: relative 
+            cursor: pointer
+            margin-left: 70px 
+            
+            &:hover
+                text-decoration: underline
+            
+            &:after
+                content: ''
+                width: 16px
+                height: 16px
+                position: absolute
+                top: 50%
+                right: 25px
+                transform: translate(50%, -50%)
+                background-image: url(../images/arrow-link-down.svg) 
+                background-size: auto 100% 
+                transition: all 0.3s ease
+                
+            &.desc
+                &:after
+                    transform: translate(50%, -50%) rotate(90deg)
+                    
+            &.asc
+                &:after
+                    transform: translate(50%, -50%) rotate(-90deg)
+                    
+
+    &__posts
+        .post-card
+            margin-bottom: 100px 
+            
+            &__content
+                .inner
+                    &:after
+                        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
+                        
+
+    &__pagination
+        padding-top: 25px 
+        border-top: 1px solid #DADADA 
+        position: relative
+        text-align: center
+        
+        .nav-link
+            height: 40px
+            line-height: 40px
+            display: inline-block
+            width: 165px
+            position: absolute
+            top: 25px
+            text-align: center
+            background-color: #F4F4F4 
+            color: #000
+            transition: all 0.3s ease
+            
+            &:after
+                content: ''
+                width: 16px
+                height: 16px
+                background-image: url(../images/arrow-link-down.svg) 
+                background-repeat: no-repeat 
+                background-position: 50% 50%
+                background-size: 100%  
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                
+            &:hover
+                background-color: $accent-primary
+                color: #fff
+                
+                &:after
+                    background-image: url(../images/arrow-link-down-w.svg) 
+                
+            
+            
+            &.prev-link
+                left: 0
+                
+                &:after
+                    left: 20px
+                    transform: translateY(-50%) rotate(180deg)
+             
+            &.next-link
+                right: 0
+                
+                &:after
+                    right: 20px
+                    
+        .page-num
+            line-height: 40px
+            display: inline-block
+            padding: 0 5px
+            color: #000
+            transition: all 0.3s ease
+            
+            &:hover
+                color: $accent-primary
+            
+            &.current
+                font-weight: 800 
+                
+                &:hover
+                    color: #000
