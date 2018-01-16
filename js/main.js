@@ -26,52 +26,11 @@ function exist(el){
 jQuery(document).ready(function($) {
 
     $(".header").headroom();
-    
-    /*---------------------------
-                                  ADD CLASS ON SCROLL
-    ---------------------------*/
-    $(function() { 
-        var $document = $(document),
-            $element = $('.toggle-menu'),
-            $element2 = $('header'),
-            className = 'hasScrolled';
 
-        $document.scroll(function() {
-            $element.toggleClass(className, $document.scrollTop() >= 1);
-            $element2.toggleClass(className, $document.scrollTop() >= 1);
-        });
-    });
-
-
-    /*---------------------------
-                                  File input logic
-    ---------------------------*/
-    $('input[type=file]').each(function(index, el) {
-        $(this).on('change', function(event) {
-            event.preventDefault();
-            var placeholder = $(this).siblings('.placeholder');
-        
-            if ( this.files.length > 0 ) {
-                if ( this.files[0].size < 5000000 ) {
-                    var filename = $(this).val().split('/').pop().split('\\').pop();
-                    if ( filename == '' ) {
-                        filename = placeholder.attr('data-label');
-                    }
-                    placeholder.text(filename);
-                } else {
-                    alert('Maximum file size is 5Mb');
-                }    
-            } else {
-                placeholder.text( placeholder.attr('data-label') );
-            }
-            
-        });
-    });
-    
     /*---------------------------
                                 PAGE ANCHORS
     ---------------------------*/
-    $('.page-menu a, .anchor').click(function() {
+    $('.anchor').click(function() {
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top - 50
         }, 800);
@@ -94,6 +53,60 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     $('.fancybox').fancybox({});
 
+
+    /*---------------------------
+                                  PORTFOLIO MIXING
+    ---------------------------*/
+    var mixer = mixitup('.mix-container', {
+        animation: {
+            "duration": 500
+        }}
+    );
+    var visEl = [];
+    $('.mix-container').on('mixEnd', function() {
+        $('.portfolio-grid__item:visible').each(function(){
+            $(this).removeClass('g-1 g-3 g-7');
+            visEl.push($(this));
+        });
+        for ($i = 1; $i <= visEl.length; $i++) {
+            if (($i - 1) % 10 === 0 || $i === 1) {
+              visEl[$i - 1].addClass('g-1');
+            }
+            if (($i - 3) % 10 === 0 || $i === 3) {
+                visEl[$i - 1].addClass('g-3');
+            }
+            if (($i - 7) % 10 === 0 || $i === 7) {
+                visEl[$i - 1].addClass('g-7');
+            }
+        }
+        visEl = [];
+    });
+
+    var count = 1;
+    $('.portfolio-grid__item').each(function(){
+        if ((count - 1) % 10 === 0 || count === 1) {
+          $(this).addClass('g-1');
+        }
+        if ((count - 3) % 10 === 0 || count === 3) {
+            $(this).addClass('g-3');
+        }
+        if ((count - 7) % 10 === 0 || count === 7) {
+            $(this).addClass('g-7');
+        }
+        count++;
+    });
+
+
+    /*---------------------------
+                                  SLIDERS
+    ---------------------------*/
+    $('.blog-slider').slick({
+        arrows: true,
+        dots: true,
+        slidesToShow: 4,
+        slidesToScroll: 1
+    });
+
     $('.work-slider').slick({
         arrows: true,
         dots: true,
@@ -103,25 +116,6 @@ jQuery(document).ready(function($) {
 
 
 
-    /*---------------------------
-                                  Blog slider
-    ---------------------------*/
-    $('.blog-slider').slick({
-        arrows: true,
-        dots: true,
-        slidesToShow: 4,
-        slidesToScroll: 1
-    });
-
-    /**
-     *
-     * Open popup
-     *
-     * @param popup {String} jQuery object (#popup)
-     *
-     * @return n/a
-     *
-    */
     function openPopup(popup){
         $.fancybox.open([
             {
@@ -133,8 +127,6 @@ jQuery(document).ready(function($) {
             loop : false
         });
     }
-
-
 
     /*---------------------------
                                   Form submit
