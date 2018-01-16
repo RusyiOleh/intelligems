@@ -57,45 +57,46 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   PORTFOLIO MIXING
     ---------------------------*/
-    var mixer = mixitup('.mix-container', {
-        animation: {
-            "duration": 500
-        }}
-    );
-    var visEl = [];
-    $('.mix-container').on('mixEnd', function() {
-        $('.portfolio-grid__item:visible').each(function(){
-            $(this).removeClass('g-1 g-3 g-7');
-            visEl.push($(this));
+    if (exist($('.mix-container'))) {
+        var mixer = mixitup('.mix-container', {
+            animation: {
+                "duration": 500
+            }}
+        );
+        var visEl = [];
+        $('.mix-container').on('mixEnd', function() {
+            $('.portfolio-grid__item:visible').each(function(){
+                $(this).removeClass('g-1 g-3 g-7');
+                visEl.push($(this));
+            });
+            for ($i = 1; $i <= visEl.length; $i++) {
+                if (($i - 1) % 10 === 0 || $i === 1) {
+                  visEl[$i - 1].addClass('g-1');
+                }
+                if (($i - 3) % 10 === 0 || $i === 3) {
+                    visEl[$i - 1].addClass('g-3');
+                }
+                if (($i - 7) % 10 === 0 || $i === 7) {
+                    visEl[$i - 1].addClass('g-7');
+                }
+            }
+            visEl = [];
         });
-        for ($i = 1; $i <= visEl.length; $i++) {
-            if (($i - 1) % 10 === 0 || $i === 1) {
-              visEl[$i - 1].addClass('g-1');
-            }
-            if (($i - 3) % 10 === 0 || $i === 3) {
-                visEl[$i - 1].addClass('g-3');
-            }
-            if (($i - 7) % 10 === 0 || $i === 7) {
-                visEl[$i - 1].addClass('g-7');
-            }
-        }
-        visEl = [];
-    });
 
-    var count = 1;
-    $('.portfolio-grid__item').each(function(){
-        if ((count - 1) % 10 === 0 || count === 1) {
-          $(this).addClass('g-1');
-        }
-        if ((count - 3) % 10 === 0 || count === 3) {
-            $(this).addClass('g-3');
-        }
-        if ((count - 7) % 10 === 0 || count === 7) {
-            $(this).addClass('g-7');
-        }
-        count++;
-    });
-
+        var count = 1;
+        $('.portfolio-grid__item').each(function(){
+            if ((count - 1) % 10 === 0 || count === 1) {
+              $(this).addClass('g-1');
+            }
+            if ((count - 3) % 10 === 0 || count === 3) {
+                $(this).addClass('g-3');
+            }
+            if ((count - 7) % 10 === 0 || count === 7) {
+                $(this).addClass('g-7');
+            }
+            count++;
+        });
+    }
 
     /*---------------------------
                                   SLIDERS
@@ -114,6 +115,18 @@ jQuery(document).ready(function($) {
          adaptiveHeight: true
     });
 
+    $('.offer-slider').slick({
+        arrows: true,
+        dots: true,
+        fade: true,
+        adaptiveHeight: true
+    });
+
+    $('.gallery-slider').slick({
+        arrows: true,
+        dots: false,
+        adaptiveHeight: true
+    });
 
 
     function openPopup(popup){
