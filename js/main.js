@@ -37,6 +37,17 @@ jQuery(document).ready(function($) {
         return false;
     });
 
+    $('.text-navigation a').click(function() {
+        var selfel = $(this),
+            target = selfel.parent().attr('href'),
+            to = $( selfel.attr('href') );
+
+        $(target).mCustomScrollbar("scrollTo", $(target).find('.mCSB_container').find(to));
+        selfel.parent().find('a').removeClass('active');
+        selfel.addClass('active');
+        return false;
+    });
+
     /*---------------------------
                                   MENU TOGGLE
     ---------------------------*/
@@ -127,6 +138,40 @@ jQuery(document).ready(function($) {
         dots: false,
         adaptiveHeight: true
     });
+
+
+    /*---------------------------
+                                  Custom scollbar
+    ---------------------------*/
+    $(".custom-scrollbar").mCustomScrollbar({
+        theme:"rounded-dark",
+            callbacks:{
+            onScroll:function(){
+                if ($(this).hasClass('text-for-navigation')) {
+                    myCustomFn(this, $(this).attr('id'));
+                }
+            }
+        }
+    });
+
+    function myCustomFn(el, nav){
+        $(el).find('.mCSB_container').children().each(function(){
+            var topOfEl = $(this).position().top - 50;
+            var topOfNext = 3000;
+            if ($(this).next().length) {
+                topOfNext = $(this).next().position().top;
+            }
+            var scrolled = Math.abs(el.mcs.top);
+            var link = '';
+            if (scrolled >= topOfEl && scrolled < topOfNext ) {
+                link = $(this).attr('id');
+                $('[href="#' + nav + '"]').find('a').removeClass('active');
+                $('[href="#' + nav + '"]').find($('[href="#' + link + '"]')).addClass('active');
+            }
+        });
+    }
+
+
 
 
     function openPopup(popup){
