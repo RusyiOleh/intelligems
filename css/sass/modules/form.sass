@@ -89,7 +89,7 @@ select.form-control
         border: 1px solid #B9B9B9
         border-radius: 2px
         position: absolute
-        top: 0
+        top: 1px
         left: 0
         box-shadow: inset 0px 0px 1px 0px rgba(224,224,224,1)
         transition: all 0.3s ease
@@ -105,10 +105,42 @@ select.form-control
             background-size: 100%
             opacity: 0
             transition: all 0.1s ease
+            
+    &--radio &__indicator    
+        width: 18px
+        height: 18px
+        border: 1px solid #B9B9B9
+        border-radius: 50%
+        position: absolute
+        top: 1px
+        left: 0
+        box-shadow: inset 0px 0px 1px 0px rgba(224,224,224,1)
+        transition: all 0.3s ease
         
-    &--checkbox input:checked + &__indicator
+        &:after
+            content: ''
+            width: 10px
+            height: 10px
+            background-color: #000
+            border-radius: 50%
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            opacity: 0
+            transition: all 0.3s ease 
+
+    &--checkbox input:checked + &__indicator,
+    &--radio input:checked + &__indicator
         border-color: #000
         
         &:after
             opacity: 1
+            
+
+    
+            
+
+    &__label
+        line-height: 20px 
         
