@@ -30,6 +30,19 @@
     // modificatots
     &--bg
         background-color: $accent-tertiary 
+    &--bgNotFull
+        position: relative
+        &:after
+            content: ""
+            display: block
+            height: calc(100% - 400px)
+            position: absolute
+            left: 0
+            top: 0
+            bottom: 0
+            right: 0
+            margin: auto
+            background-color: $accent-tertiary
     &--bigPadding
         padding: 200px 0 
     &--biggerPadding
