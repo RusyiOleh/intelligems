@@ -116,6 +116,13 @@ jQuery(document).ready(function($) {
 
 
 
+    /*---------------------------
+                                  Tabs
+    ---------------------------*/
+    $('.tabs').tabs();
+
+
+
     function openPopup(popup){
         $.fancybox.open([
             {
