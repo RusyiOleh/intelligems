@@ -178,9 +178,16 @@ jQuery(document).ready(function($) {
     }
 
     /*---------------------------
-                                  Tabs
+                                  Tabs UI
     ---------------------------*/
     $('.tabs').tabs();
+
+
+
+    /*---------------------------
+                                  Accordion UI
+    ---------------------------*/
+    $('.accordion').accordion();
 
 
 
