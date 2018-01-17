@@ -33,23 +33,7 @@
     &--bigPadding
         padding: 200px 0 
     &--biggerPadding
-        padding: 120px 0 
-        
-    &--withLine
-        position: relative
-        overflow: visible
-        &:before
-            content: ""
-            display: block
-            height: 115px
-            width: 1px
-            position: absolute
-            top: 0
-            left: 0
-            right: 0
-            margin: auto
-            transform: translateY(-50%)
-            background-color: #E1E1E1     
+        padding: 120px 0    
             
     &.pb-0
         padding-bottom: 0!important
@@ -92,6 +76,27 @@
                 
 
 
+.withLine
+    position: relative
+    overflow: visible
+    &:before
+        content: ""
+        display: block
+        height: 115px
+        width: 1px
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        margin: auto
+        transform: translateY(-50%)
+        background-color: #E1E1E1
+    &--bottom  
+        &:before
+            top: auto
+            bottom: 0
+            transform: translateY(50%)
+            
 .dots
     background-image: url(../images/dots.png)
     background-repeat: no-repeat 

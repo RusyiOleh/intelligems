@@ -13,11 +13,24 @@
 	-o-background-size: cover
 	background-size: cover
 	
+	&--small
+		height: auto 
+	
 	.container
 		height: 100% 
 		position: relative
 		.row
 			height: 100% 
+	
+	&__bgCell
+		padding: 80px
+		background-color: $accent-tertiary
+		box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.18) 
+		position: relative
+		.arrow-link
+			position: absolute
+			right: 0
+			bottom: 0
 
 	&__img
 		position: absolute

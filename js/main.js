@@ -139,6 +139,12 @@ jQuery(document).ready(function($) {
         adaptiveHeight: true
     });
 
+    $('.imgTextSlider').slick({
+        arrows: true,
+        dots: false,
+        fade: true,
+        adaptiveHeight: true
+    });
 
     /*---------------------------
                                   Custom scollbar

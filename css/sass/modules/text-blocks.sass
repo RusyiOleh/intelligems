@@ -114,8 +114,15 @@
 			text-align: right
 			p
 				margin-right: 0
-				margin-left: auto  
-				
+				margin-left: auto
+	&--cascade
+		& > div
+			&:first-child
+				padding-right: 110px 
+				border: none
+			&:nth-child(2n)
+				padding-left: 110px
+				padding-top: 160px 
 
 /* ------------------------------------ */
 /*  STEPS TEXT  (how we work page)*/

@@ -90,3 +90,35 @@
     a
         display: block
         padding: 10px 
+        
+/* ------------------------------------ */
+/*  IMG INFO SLIDER (services page)  */
+.imgTextSlider
+    &__slide
+        display: flex !important
+        align-items: center
+        justify-content: center
+        &__img
+            width: calc(100% - 450px) 
+            img
+                display: block
+                width: 100% 
+                margin: 0 0 0 auto 
+        &__info
+            width: 450px 
+            min-height: 640px 
+            background-color: $accent-primary
+            padding: 60px 30px 60px 60px  
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center  
+            
+    .slick-arrow
+        bottom: auto
+        top: 50%
+        transform: translate(-50%, -50%) 
+        &.slick-next
+            left: 0
+        &.slick-prev
+            display: none !important
