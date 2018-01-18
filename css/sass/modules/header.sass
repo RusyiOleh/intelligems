@@ -5,12 +5,14 @@
 	+transition(all, .4s)
 	background-color: #FFF 
 	z-index: 100 
-	
 	box-shadow: 0px 0px 36.8px 3.2px rgba(0, 0, 0, 0.11)
-	
-	.container-fluid
+	@media (max-width: 991px)
+		height: 50px 
+		
+
+	.container
 		height: 100% 
-		padding: 0 40px 
+		position: relative
 		.row
 			height: 100%
 			
@@ -18,7 +20,7 @@
 /* ------------------------------------ */
 /*  HEADER ONSCROLL   */
 .headroom--unpinned
-    transform: translateY(-100%)
+    transform: translateY(-140%)
 .headroom--pinned,
 .headroom--bottom 
 	transform: translateY(0)
@@ -29,6 +31,8 @@
 .logo 
 	display: block
 	width: 210px 
+	@media (max-width: 991px)
+		width: 120px 
 	img
 		display: block
 		max-width: 100% 
@@ -38,15 +42,39 @@
 /*  NAVIGATION  */
 
 .page-menu
+	@media (max-width: 991px)
+		position: fixed
+		right: 0
+		top: 0%
+		max-height: 100vh
+		width: 260px
+		background-color: $accent-primary
+		color: #FFF   
+		box-shadow: 0px 0px 34.96px 3.04px rgba(0, 0, 0, 0.15)
+		transition: .4s ease-in-out
+		transform: translateX(280px) 
+		&.is-active
+			transform: translateX(0px) 
+
 	& > ul
 		list-style-type: none
+		@media (max-width: 991px)
+			max-height: 100vh
+			overflow: auto 
+			padding: 40px 0 
 		& > li
 			display: inline-block
 			vertical-align: middle
 			margin: 0 10px
 			text-align: center
+			transition: all .2s 
 			&:last-child
 				margin-right: 0 
+			@media (max-width: 1199px)
+				margin: 0  
+			@media (max-width: 991px)
+				display: block
+				text-align: left
 			& > a
 				display: block
 				padding: 0 25px 
@@ -56,6 +84,15 @@
 				position: relative
 				overflow: hidden
 				transition: all .2s 
+				@media (max-width: 1499px)
+					line-height: 80px 
+					padding: 0 20px 
+				@media (max-width: 1199px)
+					padding: 0 20px 
+				@media (max-width: 991px)
+					color: #FFF 
+					padding: 0 60px 0 40px 
+					line-height: 50px 
 				&:after
 					content: ''
 					display: block
@@ -70,10 +107,30 @@
 					opacity: 1
 					transform: translateY(3px)  
 					transition: all .2s
+					@media (max-width: 1199px)
+						width: 50px 
+					@media (max-width: 991px)
+						display: none
+			
+			// curent menu item
+			&.current-menu-item
+				& > a
+					font-weight: 800 
+					&:after
+						opacity: 1
+						transform: translateY(0)  
+						
+			// always highlighted li (contacts)			
 			&.menu-item-highlighted
 				background-color: $accent-primary
 				a
 					color: #FFF 
+					&:after
+						display: none
+				&:hover
+					background-color: $accent-primary-darker 
+            		
+            // if has sub menu
 			&.menu-item-has-children
 				& > a
 					&:before
@@ -90,48 +147,78 @@
 						background-size: 100% 100%     
 						transform: rotate(90deg)
 						opacity: 1 
+						@media (max-width: 991px)
+							right: 50px
+							background-image: url("../images/arrow-down-w.svg")
+				@media (min-width: 992px)
+					&:hover
+						& > a
+							&:after
+								display: none
+				@media (max-width: 991px)
+					&.sub-opened
+						background-color: #FFF
+						& > a
+							font-weight: 800 
+							&:before
+								background-image: url("../images/arrow-down.svg")
+						a
+							color: $text 
+						
+			// general hover on desktop
+			@media (min-width: 992px)
 				&:hover
-					& > a
+					a
 						&:after
-							display: none
-
-			&:hover
-				a
-					&:after
-						opacity: 1
-						transform: translateY(0)
-				ul
-					opacity: 1
-					transform: translateY(0)  
-					visibility: visible 
-			&.current-menu-item
-				a
-					font-weight: 800 
-					&:after
+							opacity: 1
+							transform: translateY(0)
+					ul
 						opacity: 1
 						transform: translateY(0)  
+						visibility: visible 
+						
 			
 			// sub menu
 			ul
-				position: absolute
-				top: 100%
 				padding: 30px 
-				background-color: $accent-primary
 				list-style-type: none
-				text-align: left
-				transition: all .2s 
-				transform: translateY(20px)   
-				opacity: 0
-				visibility: hidden 
+				transition: all .2s  
+				@media (min-width: 992px)
+					opacity: 0
+					visibility: hidden 
+					position: absolute
+					top: 100%
+					background-color: $accent-primary
+					transform: translateY(20px)  
+					text-align: left
+					&.opened
+						opacity: 1
+						visibility: visible 
+						transform: translateY(0)  
+				@media (max-width: 991px)
+					padding: 0 40px 
+					max-height: 0
+					overflow: hidden 
+					&.opened
+						max-height: 1000px 
 				li
 					display: block
 					margin-bottom: 25px 
+					@media (max-width: 991px)
+						margin-bottom: 0 
+					&.current-menu-item
+						& > a
+							font-weight: 800 
 					a
 						color: #fff
 						font-size: 16px 
 						transition: all .2s
 						&:hover
 							opacity: .6 
+						@media (max-width: 1499px)
+							font-size: 14px 
+						@media (max-width: 991px)
+							line-height: 50px 
 					&:last-child
 						margin-bottom: 0 
 
@@ -141,11 +228,16 @@
 
 .menu-button
 	display: none
-	+position(fixed, 15px, 10px, auto, auto)
-	background: white
-	border-radius: 50%
-	box-shadow: 0 5px 10px rgba(black, 0.5)
+	+position(absolute, 10px, 15px, auto, auto)
 	cursor: pointer
 	transform: rotate(0deg)
-	transition: .5s ease-in-out
+	transition: .4s ease-in-out
 	cursor: pointer
+	&.is-active
+		.hamburger-inner
+			background-color: #FFF
+			&:after,
+			&:before
+				background-color: #FFF
+	@media (max-width: 991px)
+		display: block

@@ -1,4 +1,6 @@
 .testimonials
+    @media (max-width: 991px)
+        margin-top: 40px 
     & > div
         position: relative
         &:after
@@ -10,6 +12,8 @@
             top: 0
             right: 0
             background-color: #E1E1E1
+            @media (max-width: 576px)
+                display: none
         &:last-child
             &:after
                 display: none
@@ -20,11 +24,15 @@
     padding: 0 20px   
     text-align: center
     margin: 0 auto 
+    @media (max-width: 576px)
+        margin: 20px auto
     &__img
         margin: 0 auto 90px
         display: block 
         width: 135px
         transition: all .2s 
+        @media (max-width: 1499px)
+            margin-bottom: 60px 
         img
             display: block
             max-width: 100% 
@@ -34,8 +42,13 @@
     h4
         font-size: 24px 
         margin-bottom: 20px 
+        @media (max-width: 1199px)
+            font-size: 20px 
+            margin-bottom: 15px 
     p
         position: relative
+        @media (max-width: 1199px)
+            font-size: 13px 
         &:before
             content: '“' 
             display: block
@@ -55,4 +68,5 @@
     
     .socials
         margin-top: 30px 
-        
+        @media (max-width: 1499px)
+            margin-top: 20px 

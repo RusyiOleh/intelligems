@@ -5,18 +5,42 @@
     display: inline-block  
     min-width: 155px
     padding: 0 15px 
-    background: #e3e3e3
+    background: $accent-fourth
     cursor: pointer
     position: relative
+    transition: all .2s 
     img
         display: inline-block
         vertical-align: text-bottom
         max-width: 16px
         margin-left: 8px  
+    &:before
+        pointer-events: none
+        position: absolute
+        z-index: -1
+        content: ''
+        top: 100%
+        left: 5%
+        height: 10px
+        width: 90%
+        opacity: 0
+        background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.15) 0%, transparent 80%)
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, transparent 80%)
+        transition-duration: 0.3s
+        transition-property: transform, opacity
+    &:hover
+        transform: translateY(-5px)
+        background-color: $accent-primary 
+        color: #FFF 
+        &:before
+            opacity: 1
+            transform: translateY(5px)
     &-primary,
     &--primary
         background-color: $accent-primary 
         color: #FFF 
+        &:hover
+            background-color: $accent-primary-darker 
         
         &.arrow-right:after
             content: ''
@@ -45,6 +69,8 @@
     cursor: pointer
     transition: all .2s 
     display: inline-block
+    &:hover
+        background-color: $accent-primary-darker 
     
     &:after
         content: ""
@@ -61,6 +87,20 @@
         background-image: url("../images/arrow-link-down-w.svg")  
         background-size: 100%  
         transform: rotate(90deg)
+    
+    @media (max-width: 1199px)
+        width: 55px
+        height: 55px
+        &:after
+            width: 16px
+            height: 10px
+            
+    @media (max-width: 767px)
+        width: 35px
+        height: 35px
+        &:after
+            width: 12px
+            height: 6px  
         
     &--right
         &:after
@@ -71,6 +111,8 @@
         
         &:after
             background-image: url("../images/arrow-link-down.svg") 
+        &:hover
+           background-color: $accent-secondary  
         
     &--secondary
         background-color: $accent-secondary 
@@ -79,6 +121,9 @@
         &:after
             background-image: url("../images/arrow-link-down.svg")  
             transform: rotate(0deg)
+        
+        &:hover
+            background-color: $accent-secondary-darker 
             
         span
             font-weight: 700
@@ -90,6 +135,9 @@
             color: #000
             transition: all 0.3s ease
             font-size: 18px 
+            @media (max-width: 767px)
+                right: 90%
+                top: 42%
 
 /* ------------------------------------ */
 /*  SOCIAL LINKS  */
@@ -100,6 +148,9 @@
         height: 20px  
         text-align: center
         margin: 30px 0 0 
+        @media (max-width: 767px)
+            width: 16px 
+            height: 14px  
         img
             display: block
             max-width: 100%
@@ -117,6 +168,10 @@
             display: inline-block
             vertical-align: middle
             margin: 0 5px 
+            &:first-child
+                margin-left: 0
+            &:last-child
+                margin-right: 0    
 
 
 /* ------------------------------------ */
@@ -132,6 +187,7 @@
     top: auto
     bottom: 0
     box-shadow: 0px 9px 34.96px 3.04px rgba(0, 0, 0, 0.25)
+    transition: all .2s 
     &:before
         display: none
     &:after
@@ -148,10 +204,13 @@
         background-position: 50% 50%
         background-image: url("../images/arrow-link-down-w.svg")  
         background-size: 100%  
+    @media (max-width: 1199px)
+        width: 55px
+        height: 55px
+        &:after
+            width: 16px
+            height: 10px
         
-.slick-arrow
-    &:hover
-        opacity: .8 
 
 .slick-next,
 .slick-next:hover,
@@ -162,22 +221,36 @@
 .slick-prev:hover,
 .slick-prev:focus
 	background: $accent-primary url("../images/left-arrow.svg")
+    
+.slick-arrow
+    &:hover
+        background: $accent-primary-darker
 
 .slick-next
     right: 0px
     left: auto
     &:after
         transform: rotate(0deg)
+    @media (max-width: 1199px)
+        right: 20px
+    @media (max-width: 767px)
+        right: 20px
 .slick-prev
     right: 90px
     left: auto
     &:after
         transform: rotate(180deg)
+    @media (max-width: 1199px)
+        right: 90px
+    @media (max-width: 767px)
+        right: 85px
     
 /* ------------------------------------ */
 /*  SLICK DOTS  */
 .slick-dots
     bottom: -50px
+    @media (max-width: 767px)
+        bottom: -20px
     li
         width: 8px
         height: 8px
@@ -197,6 +270,12 @@
 .filters
     text-align: right
     margin-bottom: 40px 
+    @media (max-width: 1199px)
+        margin-bottom: 20px 
+    @media (max-width: 1199px)
+        text-align: center
+    @media (max-width: 576px)
+        margin-bottom: 10px 
     button
         background: transparent
         border: none
@@ -209,3 +288,7 @@
             margin-left: 0  
         &.mixitup-control-active
             font-weight: 800 
+        @media (max-width: 1199px)
+            margin: 5px 10px 
+        @media (max-width: 576px)
+            font-size: 16px 

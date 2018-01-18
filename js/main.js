@@ -54,7 +54,13 @@ jQuery(document).ready(function($) {
     $('.js-toggle-menu').on('click', function(event) {
         event.preventDefault();
         $(this).toggleClass('is-active');
-        $(this).siblings('header').toggleClass('open');
+        $('.page-menu').toggleClass('is-active');
+    });
+
+    $('.menu-item-has-children > a').click(function(event) {
+        event.preventDefault();
+        $(this).parent().toggleClass('sub-opened');
+        $(this).siblings('ul').toggleClass('opened');
     });
 
 
@@ -116,7 +122,29 @@ jQuery(document).ready(function($) {
         arrows: true,
         dots: true,
         slidesToShow: 4,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            arrows: false
+          }
+        }
+      ]
     });
 
     $('.work-slider').slick({
@@ -136,7 +164,16 @@ jQuery(document).ready(function($) {
     $('.gallery-slider').slick({
         arrows: true,
         dots: false,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            dots: true
+          }
+        }
+      ]
     });
 
     $('.imgTextSlider').slick({

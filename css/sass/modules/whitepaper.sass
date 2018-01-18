@@ -4,7 +4,11 @@
 	transition: all 0.3s ease
 	position: relative
 	margin-bottom: 55px 
-	
+	@media (max-width: 991px)
+		padding: 30px 0
+		margin-bottom: 0
+		&:nth-child(odd) 
+			background-color: $accent-tertiary
 	&:hover
 		background-color: #fff 
 		box-shadow: 0px 0px 65px 0px rgba(0, 0, 0, 0.08)
@@ -12,15 +16,31 @@
 	
 	&__image
 		width: 230px
-		
+		@media (max-width: 767px)
+			width: 180px 
+		@media (max-width: 576px)
+			width: 100px 
+		@media (max-width: 360px)
+			width: 80px 
 		img
 			display: block
 			max-width: 100% 
 			
 	&__content
 		width: calc(100% - 230px)
-		padding: 50px 230px 50px 100px
-		
+		padding: 50px 15% 50px 7%
+		@media (max-width: 991px)
+			padding: 0 15px 0 20px 
+		@media (max-width: 767px)
+			width: calc(100% - 180px)
+		@media (max-width: 576px)
+			width: calc(100% - 100px) 
+		@media (max-width: 400px)
+			padding-right: 10px
+			padding-left: 10px  
+			font-size: 12px 
+		@media (max-width: 360px)
+			width: calc(100% - 80px) 
 		.arrow-link
 			position: absolute
 			bottom: 0
@@ -28,9 +48,15 @@
 			
 		h3
 			font-size: 24px
-			line-height: 31px
+			line-height: 1.2 
 			font-weight: 800  
 			margin-bottom: 30px  
+			@media (max-width: 991px)
+				font-size: 20px 
+				margin-bottom: 20px 
+			@media (max-width: 767px)
+				font-size: 16px 
+				margin-bottom: 10px 
 			
 
 
@@ -45,3 +71,11 @@
 
 .faq
 	padding-top: 80px 
+	padding-left: 100px 
+	@media (max-width: 1499px)
+        padding-left: 60px 
+	@media (max-width: 991px)
+		padding-top: 60px
+		padding-left: 0
+	@media (max-width: 767px)
+		padding-top: 20px 

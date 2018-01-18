@@ -2,44 +2,24 @@
 	background-color: #fff
 	padding: 30px 0 
 	border-top: 1px solid #ECECEC
-	
+	@media (max-width: 1499px)
+		padding: 20px 0 
+	@media (max-width: 991px)
+		padding: 14px 0 
 	&-logo
 		a
 			display: block
-			max-width: 205px 
-			
+			width: 205px 
+			@media (max-width: 991px)
+				width: 120px
 			img
 				display: block
 				max-width: 100% 
 				
+	.page-menu
+		a
+			line-height: normal 
+			&:after
+				display: none !important
+				
 
-	&-menu
-		font-size: 17px
-		color: #000  
-		ul
-			display: flex
-			align-items: center
-			justify-content: flex-end
-			flex-wrap: wrap
-			margin: 0 -35px
-			
-			.menu-item
-				list-style: none 
-				padding: 0 35px
-
-				@media (max-width: 1499px)
-					padding: 0 25px
-						
-
-					a
-						color: inherit
-						border-bottom: 1px solid transparent
-						transition: all 0.3s ease
-						
-						&:hover
-							border-bottom-color: #000
-						
-				&.current-menu-item
-					a
-						font-weight: 700 
-						color: inherit

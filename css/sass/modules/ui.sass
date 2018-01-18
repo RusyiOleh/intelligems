@@ -4,12 +4,18 @@
 		align-items: center
 		justify-content: flex-start 
 		border-bottom: 1px solid #DEDEDE
-		
+		@media (max-width: 767px)
+			flex-wrap: wrap
+			border: none
 		&__item
 			position: relative
 			list-style: none 
 			transition: all 0.3s ease
-			
+			@media (max-width: 767px)
+				width: 100% 
+				background-color: $accent-tertiary 
+				border-bottom: 1px solid #DEDEDE
+				border-radius: 4px 
 			&:after
 				content: ''
 				width: 95px
@@ -19,14 +25,22 @@
 				bottom: 0
 				left: 50%
 				transform: translateX(-50%) 
-				transition: all 0.3s ease
+				transition: all 0.3s ease 
+				@media (max-width: 767px)
+					display: none
+				
 				
 			a
 				color: inherit
 				line-height: 22px 	
 				display: block
 				padding: 0 35px 30px
-				
+				@media (max-width: 1199px)
+					padding: 0 20px 20px
+				@media (max-width: 991px)
+					padding: 0 15px 20px
+				@media (max-width: 767px)
+					padding: 12px 12px 12px 20px
 			&.ui-state-active,
 			&.ui-state-hover
 			
@@ -38,11 +52,21 @@
 				
 		&__item + &__item
 			margin-left: 30px 
+			@media (max-width: 1199px)
+				margin-left: 15px 
+			@media (max-width: 991px)
+				margin-left: 0 
 			
 
 	&__tab
-		padding: 70px 50% 0 0
+		padding: 70px 20px 0 0
 		line-height: 1.9 
+		@media (max-width: 1499px)
+			padding-top: 60px
+		@media (max-width: 1199px)
+			padding-top: 40px 
+		@media (max-width: 767px)
+			padding-top: 20px 
 			
 				
 			

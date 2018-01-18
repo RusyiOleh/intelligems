@@ -6,7 +6,24 @@
 	+flex($d: column, $ai: center, $j: center)
 	position: relative
 	padding-top: 80px 
-	padding-bottom: 80px 
+	padding-bottom: 80px
+	
+	@media (max-width: 1499px)
+		height: calc(100vh - 80px)
+		padding-top: 60px 
+		padding-bottom: 60px
+	@media (max-width: 1199px)
+		max-height: 600px 
+	@media (max-width: 991px)
+		height: calc(100vh - 50px)
+		max-height: 550px 
+	@media (max-width: 767px)
+		height: auto 
+		max-height: 100000px 
+		.row
+			flex-direction: column-reverse
+	@media (max-width: 576px)
+		padding-bottom: 20px 
 	
 	background-position: 50% 50%
 	-webkit-background-size: cover
@@ -17,6 +34,11 @@
 		height: auto 
 	&--404
 		height: calc(100vh - 192px)
+		max-height: 100vh 
+		@media (max-width: 1499px)
+			height: calc(100vh - 162px)
+		@media (max-width: 991px)
+			height: calc(100vh - 102px)
 	
 	.container
 		height: 100% 
@@ -33,7 +55,14 @@
 			position: absolute
 			right: 0
 			bottom: 0
-
+			&:after
+				animation: bounce-down-arrow 4s infinite
+		@media (max-width: 767px)
+			padding: 60px 
+		@media (max-width: 576px)
+			padding: 40px 
+		@media (max-width: 360px)
+			padding: 40px 20px 60px 20px 
 	&__img
 		position: absolute
 		right: 0
@@ -42,9 +71,22 @@
 		height: auto
 		max-height: 100% 
 		box-shadow: 0px 0px 34.96px 3.04px rgba(0, 0, 0, 0.18)
+		max-width: 75% 
+		@media (max-width: 767px)
+			position: relative
+			max-width: 100% 
+			transform: none
+			margin: 0px 15px 40px 
 		img
 			display: block
 			max-height: calc(100vh - 250px)
+			max-width: 100% 
+			@media (max-width: 1499px)
+				max-height: calc(100vh - 200px)
+			@media (max-width: 991px)
+				max-height: calc(100vh - 170px)
+			@media (max-width: 767px)
+				max-height: 1000px 
 		&__dots
 			position: absolute
 			left: 0
@@ -54,6 +96,11 @@
 			position: absolute
 			left: 0
 			bottom: 0
+			&:after
+				animation: bounce-down-arrow 4s infinite
+			@media (max-width: 991px)
+				left: auto
+				right: 0
 		.arrow-link--secondary
 			left: 80px
 			
@@ -61,6 +108,10 @@
 		position: absolute
 		right: -40px
 		bottom: 0
+		@media (max-width: 991px)
+			right: -30px
+		@media (max-width: 600px)
+			display: none
 		
 
 	&__images
@@ -74,3 +125,12 @@
 	img
 		display: block
 		width: 100% 
+	@media (max-width: 1199px)
+		margin: 20px auto 
+	@media (max-width: 576px)
+		.row
+			margin: 0 -5px
+			& > div
+				padding: 0 5px 
+		img
+			margin: 15px 0 

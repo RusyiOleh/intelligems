@@ -3,6 +3,8 @@ form
     
 .form-group
     margin-bottom: 20px
+    @media (max-width: 1499px)
+        margin-bottom: 15px 
     
     &.mb-0
         margin-bottom: 0 
@@ -15,6 +17,9 @@ form
         font-weight: 700
         display: block  
         margin-bottom: 12px 
+        @media (max-width: 1499px)
+            font-size: 18px
+            margin-bottom: 10px  
         
 .form-control
     display: block
@@ -23,6 +28,8 @@ form
     height: 50px
     background-color: #F7F7F7 
     padding: 0 25px
+    @media (max-width: 1499px)
+        height: 45px 
     
     & + &
         margin-top: 15px 
@@ -41,6 +48,10 @@ textarea.form-control
     height: 225px
     resize: none
     padding-top: 15px 
+    @media (max-width: 1499px)
+        height: 180px 
+    @media (max-width: 991px)
+        height: 140px 
     
 select.form-control
     -webkit-appearance: none 

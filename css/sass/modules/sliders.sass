@@ -18,7 +18,12 @@
         &__img
             border: 10px solid #fff
             display: inline-block
+            position: relative
             box-shadow: 0px 0px 34.96px 3.04px rgba(0, 0, 0, 0.18)
+            @media (max-width: 991px)
+                max-width: 70% 
+            @media (max-width: 767px)
+                max-width: 100% 
             img
                 display: block
                 max-width: 100% 
@@ -26,24 +31,86 @@
                 content: ""
                 display: block 
                 position: absolute
-                right: -25px
-                bottom: -20px
+                right: -45px
+                bottom: -40px
                 width: 80px
                 height: calc(100% - 60px)  
                 border: 10px solid $accent-primary
                 z-index: -1
                 box-sizing: border-box  
+                @media (max-width: 767px)
+                    display: none
         &__info
             padding: 90px 100px 
+            @media (max-width: 1499px)
+                padding: 40px 40px 80px 60px
+            @media (max-width: 991px)
+                padding: 35px 20px 35px 0 
+            @media (max-width: 991px)
+                padding-top: 80px 
+            @media (max-width: 767px) 
+                padding-right: 0px 
             h3
                 margin-bottom: 35px  
-                    
+                @media (max-width: 1499px)
+                    margin-bottom: 25px 
+                @media (max-width: 991px)
+                    padding-right: 20px 
+                   
+
+    .slick-dots
+        bottom: -20px 
     .slick-arrow
         bottom: 0
+        @media (max-width: 991px)
+            bottom: auto
+            top: 20px
+            transform: none
+        @media (max-width: 767px)
+            top: 400px
+        @media (max-width: 540px)
+            top: 72vw
         
 
 /* ------------------------------------ */
+/*  POST SLIDER ON HOMEPAGE  */
+
+.blog-slider
+    margin-bottom: 0 
+    .slick-list
+        margin: 0 -15px
+        
+    .slide
+        padding: 0 15px
+        padding-bottom: 37px 
+        @media (max-width: 1499px)
+            padding-bottom: 20px 
+    .slick-arrow
+        background-color: transparent 
+        top: 130px
+        background-size: 12px
+        background-repeat: no-repeat 
+        background-position: 50% 50% 
+        box-shadow: none
+        
+        &:after
+            display: none
+        
+        &.slick-prev
+            left: auto
+            right: 100%
+            background-image: url(../images/triangle-arrow-left.svg) 
+            
+        &.slick-next
+            right: auto
+            left: 100%
+            background-image: url(../images/triangle-arrow-right.svg) 
+            
+
+
+/* ------------------------------------ */
 /*  GALLERY SLIDERS  */
+
 .gallery-slider
     .slick-arrow
         bottom: auto
@@ -59,12 +126,26 @@
             border-top: 20px solid transparent
             border-left: 20px solid $accent-primary
             border-bottom: 20px solid transparent
+            @media (max-width: 1199px)
+                right: -20px 
+            @media (max-width: 600px)
+                border-top: 10px solid transparent
+                border-left: 10px solid $accent-primary
+                border-bottom: 10px solid transparent
+                right: -10px
         &.slick-prev
             left: -50px
             right: auto
             border-top: 20px solid transparent
             border-right: 20px solid $accent-primary
             border-bottom: 20px solid transparent
+            @media (max-width: 1199px)
+                left: -20px
+            @media (max-width: 600px)
+                border-top: 10px solid transparent
+                border-right: 10px solid $accent-primary
+                border-bottom: 10px solid transparent
+                left: -10px
         &:after
             display: none
 .gallery-grid
@@ -75,6 +156,8 @@
         a
             display: block
             padding: 12px 
+            @media (max-width: 600px)
+                padding: 5px 
             img
                 max-width: 100%
                 display: block 
@@ -87,19 +170,36 @@
 
 .gallery-grid-3
     display: flex
+    padding: 20px 0
+    justify-content: center
+    & > div
+        &:first-child
+            width: 40.5%
+        &:last-child
+            width: 53% 
     a
         display: block
-        padding: 10px 
+        padding: 2% 
+        img
+            display: block
+            max-width: 100% 
         
+
 /* ------------------------------------ */
 /*  IMG INFO SLIDER (services page)  */
+
 .imgTextSlider
     &__slide
         display: flex !important
         align-items: center
         justify-content: center
+        flex-wrap: wrap
         &__img
             width: calc(100% - 450px) 
+            @media (max-width: 1260px)
+                width: calc(100% - 350px) 
+            @media (max-width: 991px)
+                width: 100% 
             img
                 display: block
                 width: 100% 
@@ -112,12 +212,24 @@
             display: flex
             flex-direction: column
             align-items: center
-            justify-content: center  
+            justify-content: center
+            @media (max-width: 1260px)
+                min-height: 450px 
+                width: 350px   
+                padding: 40px 30px 
+            @media (max-width: 991px)
+                width: 100%
+                min-height: 0  
             
     .slick-arrow
         bottom: auto
         top: 50%
         transform: translate(-50%, -50%) 
+        @media (max-width: 1260px)
+            transform: translate(0%, -50%) 
+        @media (max-width: 991px)
+            top: 0
+            transform: none
         &.slick-next
             left: 0
         &.slick-prev

@@ -1,11 +1,22 @@
 body
     padding-top: 90px 
+    overflow-x: hidden 
+    @media (max-width: 1499px)
+        padding-top: 80px 
+    @media (max-width: 991px)
+        padding-top: 50px 
 
 // typography
 body 
     font-size: 17px
     font-family: 'Gilroy' 
     color: $text
+    @media (max-width: 1499px)
+        font-size: 15px 
+    @media (max-width: 1199px)
+        font-size: 14px 
+    @media (max-width: 576px)
+        line-height: 1.6 
 h1,
 h2,
 h3,
@@ -13,7 +24,13 @@ h4,
 h5
     font-weight: 800 
 p
-    line-height: 1.9 
+    line-height: 1.9
+    
+a
+    color: $accent-primary  
+    transition: all .2s
+    &:hover
+        color: $accent-primary-darker
 
 .tag-text
     text-transform: uppercase
@@ -40,6 +57,8 @@ p
         font-size: 90px
         font-weight: 800
         line-height: 1.1 
+        @media (max-width: 991px)
+            font-size: 72px 
     p
         margin-bottom: 35px
         font-size: 40px 
@@ -47,3 +66,26 @@ p
         line-height: 1.4  
         &:last-child
             margin-bottom: 0 
+        @media (max-width: 991px)
+            font-size: 32px
+            margin-bottom: 30px
+        @media (max-width: 567px)
+            font-size: 28px   
+            
+
+// animations
+@keyframes bounce
+    0%, 20%, 50%, 80%, 100% 
+        transform: translateY(0)
+    40% 
+        transform: translateY(-10px)
+    60% 
+        transform: translateY(-5px)
+  
+@keyframes bounce-down-arrow
+    0%, 20%, 50%, 80%, 100% 
+        transform: rotate(90deg) translateX(0)
+    40% 
+        transform: rotate(90deg) translateX(-10px)
+    60% 
+        transform: rotate(90deg) translateX(-5px)

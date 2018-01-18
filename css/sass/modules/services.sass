@@ -5,6 +5,15 @@
         left: 0
         bottom: 0
         z-index: 0 
+        img
+            display: block
+            max-width: 100% 
+        @media (max-width: 991px)
+            bottom: auto
+            top: -85px
+            width: 250px 
+        @media (max-width: 767px)
+            display: none
         
 .service-card,
 .advantage-card
@@ -23,12 +32,32 @@
     & > *
         position: relative
         z-index: 2 
+    @media (max-width: 1499px)
+        width: 21% 
+        padding: 60px 15px 
+    @media (max-width: 1199px)
+        width: 22% 
+    @media (max-width: 991px)
+        width: 35%
+        min-height: 240px 
+        padding: 40px 10px 
+    @media (max-width: 767px)
+        width: 50% 
+    @media (max-width: 500px)
+        width: 240px 
+        margin: 0 auto 20px 
     h3
         font-size: 17px 
         margin-bottom: 10px 
+        @media (max-width: 1199px)
+            font-size: 16px 
     p
         font-size: 16px 
         line-height: 1.8 
+        @media (max-width: 1499px)
+            font-size: 14px 
+        @media (max-width: 1199px)
+            font-size: 12px 
     &__img
         display: block
         margin: 0 auto 25px
@@ -36,6 +65,8 @@
         max-width: 50px   
         &:nth-of-type(2)
             display: none
+        @media (max-width: 991px)
+            max-width: 35px 
     button
         position: absolute
         right: 0
@@ -54,20 +85,29 @@
                 display: none
         .arrow-link--secondary
             background-color: $accent-secondary 
+            &:hover
+                background-color: $accent-secondary-darker 
         
 
 .advantages
     display: flex
-    flex-wrap: nowrap
     align-items: center
+    @media (max-width: 991px)
+        flex-wrap: wrap
     
 .advantage-card
     width: 25% 
     min-height: 280px 
     padding: 30px 15px 
     transition: all .1s
+    @media (max-width: 991px)
+        width: 50% 
+    @media (max-width: 500px)
+        width: 240px 
     h3
         font-size: 21px
+        @media (max-width: 1199px)
+            font-size: 18px 
     a
         display: block
         margin: 0px auto
@@ -93,15 +133,19 @@
         background-color: $accent-primary  
         opacity: 0
         transition: all .1s   
+    @media (min-width: 991px)
+        &:hover
+            width: 30% 
     &:hover
         transform: none
         box-shadow: none 
         color: #fff
-        width: 30% 
         &:after
             opacity: 1 
             height: 150% 
             box-shadow: 0px 0px 34.96px 3.04px rgba(0, 0, 0, 0.18)
+            @media (max-width: 1199px)
+                height: 100% 
         a
             opacity: 1
             visibility: visible
