@@ -158,7 +158,15 @@ jQuery(document).ready(function($) {
         arrows: true,
         dots: true,
         fade: true,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            dots: false
+          }
+        }
+      ]
     });
 
     $('.gallery-slider').slick({
@@ -301,6 +309,9 @@ jQuery(document).ready(function($) {
         var styledMapType=new google.maps.StyledMapType(styles,{name:'Styled'});
         map.mapTypes.set('Styled',styledMapType);
         map.setMapTypeId('Styled');
+        if ($(window).width() > 767) {
+            map.panBy(-100, 0);
+        }
 
         var markerImage = new google.maps.MarkerImage('images/location.png');
         var marker = new google.maps.Marker({
