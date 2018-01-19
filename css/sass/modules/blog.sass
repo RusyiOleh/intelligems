@@ -256,13 +256,24 @@
 
 .blog-article   
     &__cover
-        height: 420px
         background-position: 50% 50%
         background-repeat: no-repeat 
         background-size: cover  
+        &:after
+            content: ''
+            display: block
+            padding-top: 30% 
+            @media (max-width: 500px)
+                padding-top: 40% 
         
     &__article
         padding: 80px 0 50px 235px
+        @media (max-width: 1199px)
+            padding-top: 40px 
+        @media (max-width: 991px)
+            padding-left: 190px 
+        @media (max-width: 767px)
+            padding-left: 0 
         
 
 
@@ -273,7 +284,8 @@
     
     &-heading
         margin-bottom: 40px
-         
+        @media (max-width: 1199px)
+            margin-bottom: 20px 
         .pre-title
             text-transform: uppercase
             color: #8791A1
@@ -284,11 +296,26 @@
         h1
             padding: 35px 0
             font-size: 50px 
-            border-top: 1px solid #F4F4F4
-            border-bottom: 1px solid #F4F4F4
+            border-top: 1px solid #dadada
+            border-bottom: 1px solid #dadada
+            @media (max-width: 1499px)
+                font-size: 40px 
+                padding: 25px 0 
+            @media (max-width: 1199px)
+                font-size: 32px 
+                padding: 20px 0 
+            @media (max-width: 991px)
+                font-size: 28px 
+                padding: 105x 0 
+            @media (max-width: 767px)
+                font-size: 22px 
+            @media (max-width: 400px)
+                font-size: 18px 
             
     &-inner
-        padding-right: 235px 
+        padding-right: 20%
+        @media (max-width: 991px)
+            padding-right: 20px 
         
     p,
     ul,
@@ -308,6 +335,12 @@
         font-weight: 800
         font-size: 30px
         line-height: 1.5em
+        @media (max-width: 1199px)
+            font-size: 24px 
+        @media (max-width: 991px)
+            font-size: 20px
+        @media (max-width: 576px)
+            font-size: 16px  
         
         p
             line-height: inherit
@@ -316,15 +349,28 @@
         display: flex
         align-items: center
         margin: 3em -235px
+        @media (max-width: 1199px)
+            margin: 2em -100px
+        @media (max-width: 991px)
+            margin: 40px 0 
         
         .white-box
             max-width: 660px 
+            @media (max-width: 991px)
+                width: 100% 
+                margin: 20px auto 
             
 
     .proposed-articles
         margin: 3em 0
         width: 1000px
-        
+        @media (max-width: 1499px)
+            width: 900px 
+        @media (max-width: 1199px)
+            width: 100% 
+        @media (max-width: 576px)
+            margin-bottom: 20px
+            margin-top: 40px  
 
 
     &-author
@@ -332,21 +378,55 @@
         left: 0
         width: 215px
         top: 125px
-        
+        @media (max-width: 1199px)
+            top: 40px
+        @media (max-width: 991px)
+            width: 170px 
+        @media (max-width: 767px)
+            width: 100%
+            position: static
+            margin-bottom: 25px 
+            display: flex
+            align-items: flex-start 
+        @media (max-width: 576px)
+            margin-bottom: 20px 
+        &__bio
+            @media (max-width: 767px)
+                width: calc(100% - 75px)
+                padding-left: 20px  
+            @media (max-width: 576px)
+                font-size: 12px 
+            strong
+                display: block
+                @media (max-width: 767px)
+                    margin-bottom: 5px 
+
         &__image
             display: inline-block
             text-align: center
             margin-bottom: 35px 
-            
+            @media (max-width: 991px)
+                margin-bottom: 20px 
+            @media (max-width: 767px)
+                width: 75px 
+                font-size: 12px 
+                margin-bottom: 0 
             img
                 display: block
                 margin: 0 0 20px 0
+                @media (max-width: 991px)
+                    margin-bottom: 10px 
+                
                 
             .name
                 display: block
                 font-weight: 800
                 font-size: 21px 
                 margin-bottom: 0!important 
+                @media (max-width: 991px)
+                    font-size: 18px 
+                @media (max-width: 767px)
+                    font-size: 12px 
         
 
 .proposed-articles
@@ -354,6 +434,9 @@
     .pa-article
         display: flex
         align-items: flex-start
+        flex-wrap: wrap
+        @media (max-width: 576px)
+            margin-bottom: 20px 
         
         &__image
             width: 210px
@@ -363,21 +446,38 @@
                 display: block
                 width: 100% 
                 margin: 0
+            @media (max-width: 1199px)
+                width: 100% 
+                margin-bottom: 10px 
                 
         &__content
             width: calc(100% - 210px)
             padding-left: 15px 
+            @media (max-width: 1199px)
+                width: 100% 
+                padding-left: 0 
             
             h3
                 font-size: 21px 
                 margin-bottom: 25px 
-                
+                @media (max-width: 1499px)
+                    font-size: 18px 
+                    margin-bottom: 20px 
+                @media (max-width: 767px)
+                    font-size: 16px 
+                    margin-bottom: 15px 
+                @media (max-width: 576px)
+                    margin-bottom: 10px 
             .more
                 display: inline-flex
                 align-items: center
                 font-size: 18px
                 font-weight: 800
-                color: #000  
+                color: #000 
+                @media (max-width: 1499px)
+                    font-size: 16px  
+                @media (max-width: 767px)
+                    font-size: 12px 
                 
                 img
                     width: 16px
@@ -392,6 +492,7 @@
     .inner
         width: 975px
         margin: 0 auto
+        max-width: 100% 
     
     .share-options
         margin-bottom: 50px 
@@ -408,7 +509,10 @@
 
     .post-comments
         margin-bottom: 120px
-         
+        @media (max-width: 1199px)
+            margin-bottom: 80px 
+        @media (max-width: 991px)
+            margin-bottom: 60px 
         img
             max-width: 100% 
             
@@ -416,7 +520,7 @@
 
 .post-navigation
     display: flex
-    align-items: flex-start
+    align-items: stretch
     justify-content: space-between
     
     .post-link
@@ -425,16 +529,42 @@
         color: #000
         background-color: #F7F7F7 
         width: 400px
-        transition: all 0.3s ease
+        transition: all 0.3s ease 
+        @media (max-width: 1199px)
+            width: 350px 
+        @media (max-width: 991px)
+            width: 49% 
+            padding: 15px 20px 
+        @media (max-width: 767px)
+            padding: 10px 15px 
+        @media (max-width: 500px)
+            padding: 10px 
         
         h3
             font-size: 21px 
             margin-bottom: 23px
-            
+            @media (max-width: 1199px)
+                margin-bottom: 20px
+                font-size: 18px  
+            @media (max-width: 991px)
+                font-size: 16px 
+            @media (max-width: 767px)
+                font-size: 14px 
+                margin-bottom: 12px
+                min-height: 38px 
+            @media (max-width: 500px)
+                font-size: 12px 
+                margin-bottom: 10px 
+            @media (max-width: 400px)
+                font-size: 10px 
+                min-height: 30px 
         span
             font-weight: 800
             position: relative
-            
+            @media (max-width: 767px)
+                font-size: 12px 
+            @media (max-width: 400px)
+                font-size: 9px 
             &:after
                 content: ''
                 width: 16px
@@ -448,6 +578,12 @@
                 left: 100%
                 transform: translateY(-50%)
                 margin-left: 10px 
+                @media (max-width: 500px)
+                    width: 12px
+                    height: 12px  
+                @media (max-width: 767px)
+                    width: 10px
+                    height: 10px  
                 
 
         &.prev-post

@@ -200,8 +200,14 @@
 		&:first-child
 			padding-right: 30px 
 			border-right: 1px solid #e1e1e1
+			@media (max-width: 991px)
+				border: none
+				padding-right: 15px 
+				margin-bottom: 60px 
 		&:nth-child(2)
 			padding-left: 110px 
+			@media (max-width: 991px)
+				padding-left: 15px 
 	.text-block
 		margin-bottom: 60px
 		max-width: 100% 
@@ -305,6 +311,8 @@
 	height: 860px
 	.mCSB_container
 		padding-bottom: 100% 
+		@media (max-width: 767px)
+			padding-bottom: 0 
 
 .text-navigation
 	width: 430px
