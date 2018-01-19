@@ -77,7 +77,10 @@ jQuery(document).ready(function($) {
     if (exist($('.mix-container'))) {
         var mixer = mixitup('.mix-container', {
             animation: {
-                "duration": 500
+                "duration": 500,
+        "nudge": true,
+        "reverseOut": false,
+        "effects": "fade"
             }}
         );
         var visEl = [];
