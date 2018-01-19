@@ -309,7 +309,7 @@ jQuery(document).ready(function($) {
         var styledMapType=new google.maps.StyledMapType(styles,{name:'Styled'});
         map.mapTypes.set('Styled',styledMapType);
         map.setMapTypeId('Styled');
-        if ($(window).width() > 767) {
+        if ($(window).width() > 767 && ! $('#map_canvas').hasClass('ls-map')) {
             map.panBy(-100, 0);
         }
 
